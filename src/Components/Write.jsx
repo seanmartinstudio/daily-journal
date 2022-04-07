@@ -7,41 +7,45 @@ import { Container } from '@material-ui/core';
 
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    '& > *': {
-      margin: theme.spacing(1),
+
+    form: {
+      margin: theme.spacing(10),
       width: '25ch',
-      font: "helvetica",
-      color: "black"
+      font: "times new roman",
+      color: "blue"
   
-    },
-  },
+    }
+ 
 }));
 
 const Write = () => {
 
   const classes = useStyles()
-  const [formData, setFormData] = useState("")
+  const [formData, setFormData] = useState({
+    date: moment().format("MMM Do YY"),
+    journalEntry: "Test entry...",
+  })
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    console.log(event)
+    console.log(event.target.value)
   }
 
-  
 
-  // console.log("moment", moment().format())
   return (
-    <div>
-    <Container>
-      <h1 className="class">Write Page</h1>
-        <form className={classes.root} noValidate autoComplete="off" onSubmit={handleSubmit}>
-        <TextField id="outlined-basic" label="Journal Entry" color="primary" variant="outlined"/>
-        <Button variant="outlined" color="primary" onClick={handleSubmit}>Submit</Button>
-        </form>
-    </Container>
+    // <div>
+    //   <h1 className="class">Write Page</h1>
+    //     <form className={classes.root} noValidate autoComplete="off" onSubmit={handleSubmit}>
+    //     <TextField id="outlined-basic" label="Journal Entry" color="primary" variant="outlined"/><br></br>
+    //     <Button variant="outlined" color="primary" onClick={handleSubmit}>Submit</Button>
+    //     </form>
+    // </div>
 
-    </div>
+      <form className={classes.form}>
+        <label>Journal Entry:</label><br></br>
+        <input value={formData.journalEntry} />
+        <input type="submit" />
+      </form>
   )
 }
 
