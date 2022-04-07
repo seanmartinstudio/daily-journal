@@ -26,18 +26,27 @@ const Write = () => {
   })
 
   //bug, in console log, input value is one character off...
+  const handleChange = (event) => {
+    // setFormData(event.target.value)
+    setFormData({
+      ...formData,
+      journalEntry: event.target.value
+    })
+  console.log("form data===>", formData)
+  }
+
   const handleSubmit = (event) => {
     event.preventDefault()
-    setFormData(event.target.value)
-    console.log("form data======>", formData)
+    console.log("State===>", formData)
+
   }
 
 
   return (
-      <form className={classes.form}>
+      <form className={classes.form} onSubmit={handleSubmit}  >
         <label>Journal Entry:</label><br></br>
-        <input type="text" value={formData.journalEntry} onChange={handleSubmit}/>
-        <input type="submit" />
+        <input type="text" value={formData.journalEntry} onChange={handleChange} />
+        <input type="submit"  />
       </form>
   )
 }
