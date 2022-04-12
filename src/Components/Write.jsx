@@ -12,20 +12,17 @@ const useStyles = makeStyles((theme) => ({
       width: '25ch',
       font: "times new roman",
       color: "blue"
-  
-    }
- 
-}));
+  }}));
+
+const initialState = {
+  date: moment().format("MMM Do YY"),
+  journalEntry: "",
+}
 
 const Write = () => {
-
   const classes = useStyles()
-  const [formData, setFormData] = useState({
-    date: moment().format("MMM Do YY"),
-    journalEntry: "",
-  })
+  const [formData, setFormData] = useState(initialState)
 
-  //bug, in console log, input value is one character off...
   const handleChange = (event) => {
     setFormData({
       ...formData,
@@ -34,19 +31,25 @@ const Write = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    console.log("form data =>", formData)
-    // pass formData object to POST request for render to DOM on read componenet
-
-  }
-
+    console.log("Form Data =>", formData)
+    setFormData(initialState)
+    // ===> Pass formData object to POST request for render to DOM on read componenet
+}
 
   return (
-      <form className={classes.form} onSubmit={(event) => handleSubmit(event)} >
+      <form className={classes.form} onSubmit={(event) => handleSubmit(event)}>
         <label>Journal Entry:</label><br></br>
         <textarea type="text" value={formData.journalEntry} onChange={(event) => handleChange(event)}></textarea><br></br>
-        <input type="submit"  />
+        <input type="submit" />
       </form>
   )
 }
+
+//To Do...
+//1. Move data state to parent app comp, pass to write comp as prop...
+//2. Get form to restest after submit
+//3. Suss out where POST AND GET requests will live
+//4. Add conditional logic to .then after posts to DOM to confirm on Write page that entry went through
+
 
 export default Write
