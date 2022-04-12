@@ -3,12 +3,12 @@
       {
         "id": 1,
         "date": "Apr 11th 22",
-        "journalEntry": ""
+        "journalEntry": "lorum ipsum"
       },
       {
         "id": 2,
         "date": "Apr 11th 22",
-        "journalEntry": ""
+        "journalEntry": "lorum ipsum"
       }
     ]
   }
