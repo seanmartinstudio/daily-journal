@@ -1,14 +1,11 @@
 {
-    "journalData": [
-      {
-        "id": 1,
-        "date": "Apr 11th 22",
-        "journalEntry": "lorum ipsum"
+  "journalData": [
+    {
+      "formData": {
+        "date": "Apr 13th 22",
+        "journalEntry": "Hello World!"
       },
-      {
-        "id": 2,
-        "date": "Apr 11th 22",
-        "journalEntry": "lorum ipsum"
-      }
-    ]
-  }
+      "id": 1
+    }
+  ]
+}

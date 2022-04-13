@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import moment from 'moment'
+import axios from 'axios'
 import { makeStyles } from '@material-ui/core/styles';
 
 
@@ -31,9 +32,12 @@ const Write = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    console.log("Form Data =>", formData)
-    setFormData(initialState)
-    // ===> Pass formData object to POST request for render to DOM on read componenet
+    axios.post('http://localhost:3001/journalData', {
+      formData
+    })
+    .then((() => {
+      setFormData(initialState)
+    }))
 }
 
   return (
