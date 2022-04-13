@@ -3,22 +3,23 @@ import axios from 'axios'
 
 const Read = () => {
 
-  const [post, setPost] = useState("")
+const [postData, setPostData] = useState([])
   
   useEffect(() => {
   axios.get('http://localhost:3001/journalData')
-  .then((response) => {
-    response.data.forEach((item) => {
-      console.log("item =>", item.formData.journalEntry)
-      setPost(item.formData.journalEntry)
-    })
-  })
+  .then((response) => {setPostData(response.data)})
 },[])
+
+const newArr = postData.map((post) => {
+return post.formData.journalEntry
+})
 
   return (
     <div>
       <h1 className="class">Read Page</h1>
-      <li>{post}</li>
+      <ul>
+        {newArr}
+      </ul>
     </div>
   )
 }
