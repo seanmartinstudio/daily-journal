@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import JournalEntry from './JournalEntry'
 
 const Read = () => {
 
@@ -10,18 +11,20 @@ const [postData, setPostData] = useState([])
   .then((response) => {setPostData(response.data)})
 },[])
 
-const newArr = postData.map((post) => {
-return post.formData.journalEntry
-})
+const newArr = postData.map((post) => (
+<JournalEntry post={post.formData.journalEntry}/>
+))
 
   return (
     <div>
       <h1 className="class">Read Page</h1>
       <ul>
-        {newArr}
+      {newArr}
       </ul>
     </div>
   )
 }
 
 export default Read
+
+//post.formData.journalEntry

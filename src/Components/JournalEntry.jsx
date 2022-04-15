@@ -1,14 +1,15 @@
 import React from 'react'
 
-const JournalEntry = () => {
+const JournalEntry = ( {post} ) => {
+
   return (
     <li>
         <h4>
-            //date
+            Read Your Life
         </h4>
         <br></br>
         <h3>
-            //journal entry
+            {post}
         </h3>
     </li>
   )
