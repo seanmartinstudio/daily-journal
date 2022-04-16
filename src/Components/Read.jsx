@@ -12,7 +12,7 @@ const [postData, setPostData] = useState([])
 },[])
 
 const newArr = postData.map((post) => (
-<JournalEntry post={post.formData.journalEntry}/>
+<JournalEntry post={post.formData.journalEntry} date={post.formData.date}/>
 ))
 
   return (
