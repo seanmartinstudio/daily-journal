@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
   }}));
 
 const initialState = {
-  date: moment().format("MMM Do YY"),
+  date: moment().format("MMM Do YYYY"),
   journalEntry: "",
 }
 
