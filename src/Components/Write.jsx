@@ -24,24 +24,11 @@ const Write = () => {
   const classes = useStyles()
   const [formData, setFormData] = useState(initialState)
 
-
   const handleChange = (event) => {
-    // lineBreakHandler(event)
-    // const replace = event.target.value.replace('\n', "8888")
     setFormData({
       ...formData,
       journalEntry: event.target.value
-    })
-  console.log("formData", formData)}
-
-    // // function to create line breaks
-    // const lineBreakHandler = (event) => {
-    //   const split = event.target.value.replace("\n", "{\\n}")
-    //   console.log("split", split)
-    //   return split
-    // }
-
-  
+    })}
 
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -51,19 +38,15 @@ const Write = () => {
     })
     .then((() => {
       setFormData(initialState)
-    }))
-}
+    }))}
 
   return (
       <form className={classes.form} onSubmit={(event) => handleSubmit(event)}>
         <label>Journal Entry:</label><br></br>
-        <textarea rows="10" cols="80" type="text" value={formData.journalEntry} onChange={(event) => handleChange(event)} ></textarea><br></br>
+        <textarea  rows="10" cols="80" type="text" value={formData.journalEntry} onChange={(event) => handleChange(event)} ></textarea><br></br>
         <input type="submit" />
       </form>
   )
 }
 
 export default Write
-
-//submit run function to parse it and find line breaks, replase them for JSX
-//get string, look for line break, if line break, split on line break, returns array of split on line break, if line break, replace for {}

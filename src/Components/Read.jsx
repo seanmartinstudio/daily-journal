@@ -18,7 +18,7 @@ const newArr = postData.map((post) => (
   return (
     <div>
       <h1 className="class">Read Page</h1>
-      <ul>
+      <ul style={{whiteSpace: "pre-line"}}>
       {newArr}
       </ul>
     </div>
