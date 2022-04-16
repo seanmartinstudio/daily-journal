@@ -4,7 +4,7 @@ const JournalEntry = ( {post, date} ) => {
 
   return (
     <ul>
-        <h3 style={{fontStyle: "italic"}}>
+        <h3 style={{fontStyle: "italic", textDecoration: "underline"}}>
             {date}
         </h3>
         <h4>
