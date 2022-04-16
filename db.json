@@ -195,6 +195,41 @@
         "journalEntry": "test full year"
       },
       "id": 28
+    },
+    {
+      "formData": {
+        "date": "Apr 16th 2022",
+        "journalEntry": "date test"
+      },
+      "id": 29
+    },
+    {
+      "formData": {
+        "date": "Apr 16th 2022",
+        "journalEntry": "new test"
+      },
+      "id": 30
+    },
+    {
+      "formData": {
+        "date": "Apr Sat 2022",
+        "journalEntry": "testing new moment format"
+      },
+      "id": 31
+    },
+    {
+      "formData": {
+        "date": "Sat Apr 16th 2022",
+        "journalEntry": "another for mate date test"
+      },
+      "id": 32
+    },
+    {
+      "formData": {
+        "date": "Sat Apr 16 2022",
+        "journalEntry": "Good lord yet another date test"
+      },
+      "id": 33
     }
   ]
 }

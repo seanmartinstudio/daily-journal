@@ -8,6 +8,8 @@ const Read = () => {
 const [postData, setPostData] = useState([])
 //date picker boiler state...
 const [dateValue, setDateValue] = useState(new Date());
+
+console.log("Calendar Value=>",dateValue)
   
   useEffect(() => {
   axios.get('http://localhost:3001/journalData')
@@ -21,7 +23,8 @@ const newArr = postData.map((post) => (
   return (
     <div>
       <h1 className="class">Read Page</h1>
-      <DatePicker onChange={setDateValue} value={dateValue} />
+      <DatePicker onChange={setDateValue} value={dateValue}/>
+      <br></br>
       <ul style={{whiteSpace: "pre-line"}}>
       {newArr}
       </ul>
