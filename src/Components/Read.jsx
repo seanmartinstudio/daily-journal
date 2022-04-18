@@ -6,10 +6,12 @@ import JournalEntry from './JournalEntry'
 const Read = () => {
 
 const [postData, setPostData] = useState([])
-//date picker boiler state...
-const [dateValue, setDateValue] = useState(new Date());
 
-console.log("Calendar Value=>",dateValue)
+
+// const [dateValue, setDateValue] = useState(null);
+// ^^^ State for DatePicker update
+
+
   
   useEffect(() => {
   axios.get('http://localhost:3001/journalData')
@@ -23,8 +25,8 @@ const newArr = postData.map((post) => (
   return (
     <div>
       <h1 className="class">Read Page</h1>
-      <DatePicker onChange={setDateValue} value={dateValue}/>
-      <br></br>
+      {/* <DatePicker onChange={setDateValue} value={dateValue}/> */}
+      {/* {^^^ Element for DatePicker update} */}
       <ul style={{whiteSpace: "pre-line"}}>
       {newArr}
       </ul>
