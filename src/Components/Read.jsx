@@ -5,17 +5,15 @@ import JournalEntry from './JournalEntry'
 
 const Read = () => {
 
-const [postData, setPostData] = useState([])
-
-
 // const [dateValue, setDateValue] = useState(null);
 // ^^^ State for DatePicker update
 
+const [postData, setPostData] = useState([])
 
-  
-  useEffect(() => {
-  axios.get('http://localhost:3001/journalData')
-  .then((response) => {setPostData(response.data)})
+
+useEffect(() => {
+axios.get('http://localhost:3001/journalData')
+.then((response) => {setPostData(response.data)})
 },[])
 
 const newArr = postData.map((post) => (
@@ -23,8 +21,8 @@ const newArr = postData.map((post) => (
 ))
 
   return (
-    <div>
-      <h1 className="class">Read Page</h1>
+    <div style={{fontFamily: "helvetica", padding: 25}}>
+      <h1>Journal Entries</h1>
       {/* <DatePicker onChange={setDateValue} value={dateValue}/> */}
       {/* {^^^ Element for DatePicker update} */}
       <ul style={{whiteSpace: "pre-line"}}>

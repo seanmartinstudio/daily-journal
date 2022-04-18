@@ -38,16 +38,16 @@ const Nav = () => {
 const classes = useStyles();
 
   return (
-    <AppBar position="static" className={ classes.appBarColor}>
-  <Toolbar>
-    <Typography variant="h2" className={classes.title}>
-      Daily Journal
-    </Typography>
-    <Button to="/" component={ Link } className={classes.button}>Home</Button>
-    <Button to="/read" component={ Link } className={classes.button}>Read</Button>
-    <Button to="/write" component={ Link } className={classes.button}>Write</Button>
-  </Toolbar>
-</AppBar>
+  <AppBar position="static" className={classes.appBarColor}>
+    <Toolbar>
+      <Typography variant="h2" className={classes.title}>
+        Daily Journal
+      </Typography>
+        <Button to="/" component={ Link } className={classes.button}>Home</Button>
+        <Button to="/read" component={ Link } className={classes.button}>Read</Button>
+        <Button to="/write" component={ Link } className={classes.button}>Write</Button>
+    </Toolbar>
+  </AppBar>
   )
 }
 

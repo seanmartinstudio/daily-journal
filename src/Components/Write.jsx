@@ -1,19 +1,7 @@
 import React, { useState } from 'react'
 import moment from 'moment'
 import axios from 'axios'
-import { makeStyles } from '@material-ui/core/styles';
 
-
-// styling left over from material ui, figure out how to make styling
-//object for form...
-const useStyles = makeStyles((theme) => ({
-
-    form: {
-      margin: theme.spacing(10),
-      width: '25ch',
-      font: "times new roman",
-      color: "blue"
-  }}));
 
 const initialState = {
   date: moment().format("ddd MMM D YYYY"),
@@ -21,7 +9,6 @@ const initialState = {
 }
 
 const Write = () => {
-  const classes = useStyles()
   const [formData, setFormData] = useState(initialState)
 
   const handleChange = (event) => {
@@ -32,7 +19,6 @@ const Write = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    // console.log("formData", formData)
     axios.post('http://localhost:3001/journalData', {
       formData
     })
@@ -41,9 +27,9 @@ const Write = () => {
     }))}
 
   return (
-      <form className={classes.form} onSubmit={(event) => handleSubmit(event)}>
+      <form style={{padding: 50, fontFamily: "helvetica"}} onSubmit={(event) => handleSubmit(event)}>
         <label>Journal Entry:</label><br></br>
-        <textarea  rows="10" cols="80" type="text" value={formData.journalEntry} onChange={(event) => handleChange(event)} ></textarea><br></br>
+        <textarea style={{fontFamily: "helvetica"}}  rows="10" cols="80" type="text" value={formData.journalEntry} onChange={(event) => handleChange(event)} ></textarea><br></br>
         <input type="submit" />
       </form>
   )
