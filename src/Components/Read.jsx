@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import DatePicker from 'react-date-picker'
 import JournalEntry from './JournalEntry'
 
 const Read = () => {
