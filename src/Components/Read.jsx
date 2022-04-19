@@ -5,8 +5,7 @@ import JournalEntry from './JournalEntry'
 
 const Read = () => {
 
-  // const [dateValue, setDateValue] = useState(null);
-  // ^^^ State for DatePicker update
+  const [dateValue, setDateValue] = useState(null)
 
   const [postData, setPostData] = useState([])
 
@@ -32,8 +31,7 @@ const Read = () => {
   return (
     <div style={{fontFamily: "helvetica", padding: 25}}>
       <h1>Journal Entries</h1>
-      {/* <DatePicker onChange={setDateValue} value={dateValue}/> */}
-      {/* {^^^ Element for DatePicker update} */}
+      <DatePicker onChange={setDateValue} value={dateValue}/>
       <ul style={{whiteSpace: "pre-line"}}>
       {newArr}
       </ul>
