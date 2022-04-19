@@ -10,6 +10,7 @@ const JournalEntry = ( {post, date} ) => {
         <h4>
             {post}
         </h4>
+        <button>Delete Entry</button>
     </ul>
   )
 }
