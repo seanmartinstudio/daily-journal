@@ -17,7 +17,7 @@ axios.get('http://localhost:3001/journalData')
 },[])
 
 const newArr = postData.map((post) => (
-<JournalEntry post={post.formData.journalEntry} date={post.formData.date} key={post.id}/>
+<JournalEntry post={post.formData.journalEntry} date={post.formData.date} key={post.id} id={post.id}/>
 ))
 
   return (
