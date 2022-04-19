@@ -5,9 +5,6 @@ import JournalEntry from './JournalEntry'
 
 const Read = () => {
 
-  // const [dateValue, setDateValue] = useState(null);
-  // ^^^ State for DatePicker update
-
   const [postData, setPostData] = useState([])
 
   // Initiates GET request from server and updates state after component renders
@@ -32,8 +29,6 @@ const Read = () => {
   return (
     <div style={{fontFamily: "helvetica", padding: 25}}>
       <h1>Journal Entries</h1>
-      {/* <DatePicker onChange={setDateValue} value={dateValue}/> */}
-      {/* {^^^ Element for DatePicker update} */}
       <ul style={{whiteSpace: "pre-line"}}>
       {newArr}
       </ul>
