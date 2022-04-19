@@ -5,31 +5,29 @@ import JournalEntry from './JournalEntry'
 
 const Read = () => {
 
-// const [dateValue, setDateValue] = useState(null);
-// ^^^ State for DatePicker update
+  // const [dateValue, setDateValue] = useState(null);
+  // ^^^ State for DatePicker update
 
-const [postData, setPostData] = useState([])
+  const [postData, setPostData] = useState([])
 
+  // Initiates GET request from server and updates state after component renders
+  useEffect(() => {
+  axios.get('http://localhost:3001/journalData')
+  .then((response) => {setPostData(response.data)})
+  },[])
 
-useEffect(() => {
-axios.get('http://localhost:3001/journalData')
-.then((response) => {setPostData(response.data)})
-},[])
+  // deteles joural entry from UI
+  const handleDeleteUI = (id) => {
+    const newArrDelete = postData.filter((post) => {
+      if(post.id !== id) {
+        return id
+      }})
+    setPostData(newArrDelete)
+  }
 
-const handleDeleteUI = (id) => {
-  const newArrDelete = postData.filter((post) => {
-    if(post.id !== id) {
-      return id
-    }
-  })
-  setPostData(newArrDelete)
-}
-
-const newArr = postData.map((post) => (
-<JournalEntry handleDeleteUI={handleDeleteUI} post={post.formData.journalEntry} date={post.formData.date} key={post.id} id={post.id}/>
-))
-
-
+  const newArr = postData.map((post) => (
+  <JournalEntry handleDeleteUI={handleDeleteUI} post={post.formData.journalEntry} date={post.formData.date} key={post.id} id={post.id}/>
+  ))
 
   return (
     <div style={{fontFamily: "helvetica", padding: 25}}>
@@ -44,5 +42,3 @@ const newArr = postData.map((post) => (
 }
 
 export default Read
-
-//post.formData.journalEntry

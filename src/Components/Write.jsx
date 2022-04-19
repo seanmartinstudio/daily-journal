@@ -9,14 +9,17 @@ const initialState = {
 }
 
 const Write = () => {
+
   const [formData, setFormData] = useState(initialState)
 
+  // Dynamically updates formData obj from textarea
   const handleChange = (event) => {
     setFormData({
       ...formData,
       journalEntry: event.target.value
     })}
 
+  //submits fomrData obj to server and renders to UI
   const handleSubmit = (event) => {
     event.preventDefault()
     axios.post('http://localhost:3001/journalData', {
@@ -29,7 +32,7 @@ const Write = () => {
   return (
       <form style={{padding: 50, fontFamily: "helvetica"}} onSubmit={(event) => handleSubmit(event)}>
         <label>Journal Entry:</label><br></br>
-        <textarea style={{fontFamily: "helvetica"}}  rows="10" cols="80" type="text" value={formData.journalEntry} onChange={(event) => handleChange(event)} ></textarea><br></br>
+        <textarea style={{fontFamily: "helvetica"}} rows="10" cols="80" type="text" value={formData.journalEntry} onChange={(event) => handleChange(event)} ></textarea><br></br>
         <input type="submit" />
       </form>
   )

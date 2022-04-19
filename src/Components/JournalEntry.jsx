@@ -3,11 +3,11 @@ import axios from 'axios'
 
 const JournalEntry = ( {post, date, id, handleDeleteUI} ) => {
 
+  // Deletes journal entry from json and envokes UI delete function in Read componenet
   const handleDeleteButton = () => {
     axios.delete('http://localhost:3001/journalData/' + id)
-    .then((response) => {handleDeleteUI(id)})
+    .then(() => {handleDeleteUI(id)})
     }
-
 
   return (
     <ul>

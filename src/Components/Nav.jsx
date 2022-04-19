@@ -5,10 +5,8 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
-import { LineWeight } from '@material-ui/icons';
 
+// Styling hook from material ui nav bar
 const useStyles = makeStyles(() => ({
     root: {
       flexGrow: 1,
@@ -35,20 +33,20 @@ const useStyles = makeStyles(() => ({
 
 const Nav = () => {
 
-const classes = useStyles();
+  const classes = useStyles();
 
-  return (
-  <AppBar position="static" className={classes.appBarColor}>
-    <Toolbar>
-      <Typography variant="h2" className={classes.title}>
-        Daily Journal
-      </Typography>
-        <Button to="/" component={ Link } className={classes.button}>Home</Button>
-        <Button to="/read" component={ Link } className={classes.button}>Read</Button>
-        <Button to="/write" component={ Link } className={classes.button}>Write</Button>
-    </Toolbar>
-  </AppBar>
-  )
-}
+    return (
+    <AppBar position="static" className={classes.appBarColor}>
+      <Toolbar>
+        <Typography variant="h2" className={classes.title}>
+          Daily Journal
+        </Typography>
+          <Button to="/" component={ Link } className={classes.button}>Home</Button>
+          <Button to="/read" component={ Link } className={classes.button}>Read</Button>
+          <Button to="/write" component={ Link } className={classes.button}>Write</Button>
+      </Toolbar>
+    </AppBar>
+    )
+  }
 
 export default Nav
