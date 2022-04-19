@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 
-const JournalEntry = ( {post, date, id} ) => {
+const JournalEntry = ( {post, date, id, handleDeleteUI} ) => {
 
   const handleDeleteButton = () => {
-    axios.delete('http://localhost:3001/journalData' + id)
-    .then((response) => {console.log(response)})
+    axios.delete('http://localhost:3001/journalData/' + id)
+    .then((response) => {handleDeleteUI(id)})
     }
-    
-    // handle button delete logic
+
 
   return (
     <ul>
+      <div id={id}>
         <h3 style={{fontStyle: "italic", textDecoration: "underline"}}>
             {date}
         </h3>
@@ -19,6 +19,7 @@ const JournalEntry = ( {post, date, id} ) => {
             {post}
         </h4>
         <button onClick={handleDeleteButton}>Delete Entry</button>
+      </div>
     </ul>
   )
 }

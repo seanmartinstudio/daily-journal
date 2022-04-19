@@ -16,9 +16,20 @@ axios.get('http://localhost:3001/journalData')
 .then((response) => {setPostData(response.data)})
 },[])
 
+const handleDeleteUI = (id) => {
+  const newArrDelete = postData.filter((post) => {
+    if(post.id !== id) {
+      return id
+    }
+  })
+  setPostData(newArrDelete)
+}
+
 const newArr = postData.map((post) => (
-<JournalEntry post={post.formData.journalEntry} date={post.formData.date} key={post.id} id={post.id}/>
+<JournalEntry handleDeleteUI={handleDeleteUI} post={post.formData.journalEntry} date={post.formData.date} key={post.id} id={post.id}/>
 ))
+
+
 
   return (
     <div style={{fontFamily: "helvetica", padding: 25}}>
