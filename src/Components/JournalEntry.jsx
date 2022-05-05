@@ -8,6 +8,11 @@ const JournalEntry = ( {post, date, id, handleDeleteUI} ) => {
     axios.delete('http://localhost:3001/journalData/' + id)
     .then(() => {handleDeleteUI(id)})
     }
+  
+    // implimenting like button
+  const handleLikeButton = () => {
+    const buttonNum = 0
+  }
 
   return (
     <ul>
@@ -19,6 +24,8 @@ const JournalEntry = ( {post, date, id, handleDeleteUI} ) => {
             {post}
         </h4>
         <button onClick={handleDeleteButton}>Delete Entry</button>
+        {/* implimenting like button */}
+        <button onClick={handleLikeButton}>Hello World</button>
       </div>
     </ul>
   )
