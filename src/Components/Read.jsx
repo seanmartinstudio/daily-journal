@@ -12,7 +12,7 @@ const Read = () => {
   .then((response) => {setPostData(response.data)})
   },[])
 
-  // deteles joural entry from UI
+  // Deteles joural entry from UI
   const handleDeleteUI = (id) => {
     const newArrDelete = postData.filter((post) => {
       if(post.id !== id) {

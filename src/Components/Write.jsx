@@ -12,14 +12,14 @@ const Write = () => {
 
   const [formData, setFormData] = useState(initialState)
 
-  // Dynamically updates formData obj from textarea
+  // Dynamically updates formData obj from text area
   const handleChange = (event) => {
     setFormData({
       ...formData,
       journalEntry: event.target.value
     })}
 
-  //submits fomrData obj to server and renders to UI
+  // Submits formData obj to json server
   const handleSubmit = (event) => {
     event.preventDefault()
     axios.post('http://localhost:3001/journalData', {

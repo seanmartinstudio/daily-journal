@@ -6,6 +6,13 @@
         "journalEntry": "Hello World!"
       },
       "id": 1
+    },
+    {
+      "formData": {
+        "date": "Fri Apr 22 2022",
+        "journalEntry": "The Daily Journal app is a great way to record your thoughts!"
+      },
+      "id": 2
     }
   ]
 }
